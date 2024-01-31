@@ -22,6 +22,10 @@ A segment is a fixed capacity ring. In theory, you should not directly use it.
 
 Queue is a container adapter that provides first-in-first-out (FIFO) data structures for insertion and deletion. By default it is implemented as an adapter on top of the deque. You can also specify a Container, as long as the container implements the Container interface
 
+## priorityqueue
+
+The priority queue is a container adaptor that provides constant time lookup of the largest (by default) element, at the expense of logarithmic insertion and extraction. By default it is implemented as an adapter on top of the heap.
+
 ## stack
 
 Stack is a container adaptor that provides a LIFO (last-in-first-out) data structure for insertion and deletion. It is implemented as an adapter on top of deque.
