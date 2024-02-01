@@ -10,13 +10,23 @@ Array is a container that encapsulates fixed size arrays.
 
 List is a container that supports constant time insertion and removal of elements from anywhere in the container. Fast random access is not supported. It is implemented as a doubly-linked list.
 
-## deque
+## vector
 
-Deque (double-ended queue) is an indexed sequence container that allows fast insertion and deletion at both its beginning and its end. In addition, insertion and deletion at either end of a deque never invalidates pointers to the rest of the elements. Deque actually implements APIs for inserting and deleting from any position. If you need to frequently insert and delete at intermediate positions while also requiring fast random access, then deque is a good choice. Indeed, when it comes to sorting, deque may not perform as well as vector. Vector provides efficient contiguous memory access, which can enhance sorting performance compared to deque, especially for large datasets. So, if sorting is a critical operation for your use case, vector would be a better choice.
+The storage of the vector is handled automatically, being expanded as needed. Vectors usually occupy more space than static arrays, because more memory is allocated to handle future growth. This way a vector does not need to reallocate each time an element is inserted, but only when the additional memory is exhausted. The total amount of allocated memory can be queried using Capacity() function. Extra memory can be returned to the system via a call to ShrinkToFit().
+
+The complexity (efficiency) of common operations on vectors is as follows:
+
+* Random access - constant $O(1)$.
+* Insertion or removal of elements at the end - amortized constant $O(1)$.
+* Insertion or removal of elements - linear in the distance to the end of the vector $O(n)$.
 
 ## segment
 
 A segment is a fixed capacity ring. In theory, you should not directly use it.
+
+## deque
+
+Deque (double-ended queue) is an indexed sequence container that allows fast insertion and deletion at both its beginning and its end. In addition, insertion and deletion at either end of a deque never invalidates pointers to the rest of the elements. Deque actually implements APIs for inserting and deleting from any position. If you need to frequently insert and delete at intermediate positions while also requiring fast random access, then deque is a good choice. Indeed, when it comes to sorting, deque may not perform as well as vector. Vector provides efficient contiguous memory access, which can enhance sorting performance compared to deque, especially for large datasets. So, if sorting is a critical operation for your use case, vector would be a better choice.
 
 ## queue
 
