@@ -40,6 +40,10 @@ The priority queue is a container adaptor that provides constant time lookup of 
 
 Stack is a container adaptor that provides a LIFO (last-in-first-out) data structure for insertion and deletion. It is implemented as an adapter on top of deque.
 
+## skiplist
+
+A skiplist is a data structure that allows for efficient search, insertion and deletion of elements in a sorted list. It is a probabilistic data structure, meaning that its average time complexity is determined through a probabilistic analysis. Skiplists have an average time complexity of $O(log_2n)$ for search, insertion and deletion, which is similar to that of balanced trees, such as AVL trees and red-black trees, but with the advantage of simpler implementation and lower overhead.
+
 ## bitmap
 
 Bitmap is a container that encapsulates a bit array. It is implemented as an adapter on top of the []byte. It is mainly used to solve the problem of deduplication of large data sets.
