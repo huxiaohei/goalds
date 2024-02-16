@@ -30,6 +30,17 @@ func TestArrayDS(t *testing.T) {
 	assert.Equal(t, d.String(), "[1 2 3 4 5]")
 }
 
+func TestTraversal(t *testing.T) {
+	a := New[int](5)
+	for i := 0; i < a.Size(); i += 1 {
+		a.Set(i, i+1)
+	}
+	a.Traversal(func(i int, v int) bool {
+		assert.Equal(t, v, i+1)
+		return v < 3
+	})
+}
+
 func TestError(t *testing.T) {
 	a := NewFrom[int](1, 2, 3, 4, 5)
 	assert.PanicsWithValue(t, "array: out of range index: 10 size: 5", func() { a.At(10) })

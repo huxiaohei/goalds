@@ -122,6 +122,20 @@ func TestRemoveRange(t *testing.T) {
 	assert.True(t, a.Empty())
 }
 
+func TestTraversal(t *testing.T) {
+	a := New[int]()
+	// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	for i := 0; i < 10; i++ {
+		a.PushBack(i)
+	}
+	pre := 0
+	a.Traversal(func(v int) bool {
+		assert.Equal(t, pre, v)
+		pre++
+		return pre != 5
+	})
+}
+
 func TestError(t *testing.T) {
 	a := New[int]()
 	assert.Panics(t, func() { a.PopFront() })

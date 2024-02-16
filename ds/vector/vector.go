@@ -3,6 +3,7 @@ package vector
 import (
 	"fmt"
 	"goalds/utils/locker"
+	"goalds/utils/visitor"
 	"sync"
 )
 
@@ -161,4 +162,15 @@ func (v *Vector[T]) String() string {
 	defer v.locker.RUnlock()
 	v.locker.RLock()
 	return fmt.Sprintf("vector: %v", v.data)
+}
+
+func (v *Vector[T]) Traversal(visitor visitor.KVVisitor[int, T]) {
+	defer v.locker.RUnlock()
+	v.locker.RLock()
+
+	for i, v := range v.data {
+		if !visitor(i, v) {
+			break
+		}
+	}
 }

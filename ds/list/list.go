@@ -2,6 +2,7 @@ package list
 
 import (
 	"fmt"
+	"goalds/utils/visitor"
 )
 
 type Node[T any] struct {
@@ -227,4 +228,14 @@ func (l *List[T]) String() string {
 	}
 	str += "]"
 	return str
+}
+
+func (l *List[T]) Traversal(visitor visitor.VVisitor[T]) {
+	node := l.head
+	for node != nil {
+		if !visitor(node.Val) {
+			break
+		}
+		node = node.next
+	}
 }

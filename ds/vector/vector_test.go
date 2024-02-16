@@ -74,6 +74,18 @@ func TestVectorString(t *testing.T) {
 	assert.Equal(t, "vector: [9 8 7 6 5 4 3 2 1 0]", v.String())
 }
 
+func TestTraversal(t *testing.T) {
+	v := New[int](WithCapacity(100), WithGoroutineSafe())
+	for i := 0; i < 100; i++ {
+		v.PushBack(i)
+	}
+	v.Traversal(func(i int, v int) bool {
+		assert.Equal(t, i, v)
+		return i != 50
+	})
+
+}
+
 func TestPanic(t *testing.T) {
 	v := New[int](WithCapacity(10))
 	v.ShrinkToFit()

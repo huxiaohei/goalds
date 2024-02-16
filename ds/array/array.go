@@ -1,6 +1,9 @@
 package array
 
-import "fmt"
+import (
+	"fmt"
+	"goalds/utils/visitor"
+)
 
 type Array[T any] struct {
 	data []T
@@ -63,4 +66,12 @@ func (a *Array[T]) Swap(o *Array[T]) {
 
 func (a *Array[T]) String() string {
 	return fmt.Sprintf("%v", a.data)
+}
+
+func (a *Array[T]) Traversal(visitor visitor.KVVisitor[int, T]) {
+	for i, v := range a.data {
+		if !visitor(i, v) {
+			break
+		}
+	}
 }
