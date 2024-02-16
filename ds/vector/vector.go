@@ -2,7 +2,7 @@ package vector
 
 import (
 	"fmt"
-	"goalds/ds/locker"
+	"goalds/utils/locker"
 	"sync"
 )
 

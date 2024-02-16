@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"goalds/al/hash"
 	"goalds/ds/bitmap"
-	"goalds/ds/locker"
+	"goalds/utils/locker"
 	"math"
 	"sync"
 )

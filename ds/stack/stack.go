@@ -1,9 +1,9 @@
 package stack
 
 import (
-	"goalds/ds/container"
 	"goalds/ds/deque"
-	"goalds/ds/locker"
+	"goalds/utils/container"
+	"goalds/utils/locker"
 	"sync"
 )
 

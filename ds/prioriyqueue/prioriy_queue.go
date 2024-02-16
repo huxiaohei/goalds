@@ -2,8 +2,8 @@ package prioriyqueue
 
 import (
 	"container/heap"
-	"goalds/ds/locker"
 	"goalds/utils/comparator"
+	"goalds/utils/locker"
 	"sync"
 )
 
