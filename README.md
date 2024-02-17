@@ -48,6 +48,10 @@ A skiplist is a data structure that allows for efficient search, insertion and d
 
 GoMap is an encapsulation of Golang's native map structure.
 
+## set
+
+Set is implemented based on the Golang's native map structure.. Support the basic operations of sets, such as union, intersection, difference set.
+
 ## bitmap
 
 Bitmap is a container that encapsulates a bit array. It is implemented as an adapter on top of the []byte. It is mainly used to solve the problem of deduplication of large data sets.
