@@ -16,7 +16,7 @@ func TestVectorNew(t *testing.T) {
 	}
 	assert.Equal(t, 100, v.Size())
 
-	vv := NewFromVector[int](v, WithGoroutineSafe())
+	vv := NewFromVector(v, WithGoroutineSafe())
 	assert.Equal(t, 100, vv.Size())
 	assert.Equal(t, 100, vv.Capacity())
 

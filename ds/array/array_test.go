@@ -6,10 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestArrayDS(t *testing.T) {
+func TestArray(t *testing.T) {
 	a := New[int](5)
-	b := NewFrom[int](1, 2, 3, 4, 5)
-	c := Clone[int](b)
+	b := NewFrom(1, 2, 3, 4, 5)
+	c := Clone(b)
 
 	assert.False(t, false, a.Empty())
 	assert.Equal(t, b.At(2), c.At(2))
@@ -46,6 +46,6 @@ func TestError(t *testing.T) {
 	assert.PanicsWithValue(t, "array: out of range index: 10 size: 5", func() { a.At(10) })
 	assert.PanicsWithValue(t, "array: out of range index: 10 size: 5", func() { a.Set(10, 3) })
 
-	b := NewFrom[int](1, 2, 3)
+	b := NewFrom(1, 2, 3)
 	assert.PanicsWithValue(t, "array: two arrays have different lengths len: 5 len: 3", func() { a.Swap(b) })
 }

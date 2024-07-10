@@ -8,7 +8,7 @@ import (
 )
 
 func TestPrioriyQueue(t *testing.T) {
-	q := New[int](comparator.OrderedTypeCmp[int], WithGoroutineSafe())
+	q := New(comparator.OrderedTypeCmp[int], WithGoroutineSafe())
 	assert.True(t, q.Empty())
 	q.Push(1)
 	q.Push(10)
@@ -28,7 +28,7 @@ func TestPrioriyQueue(t *testing.T) {
 		assert.Equal(t, i, q.Pop())
 	}
 
-	q = New[int](comparator.Reverse[int](comparator.OrderedTypeCmp[int]), WithGoroutineSafe())
+	q = New(comparator.Reverse[int](comparator.OrderedTypeCmp[int]), WithGoroutineSafe())
 	assert.True(t, q.Empty())
 	q.Push(1)
 	q.Push(10)

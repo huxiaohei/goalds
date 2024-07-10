@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestBitmapDS(t *testing.T) {
+func TestBitmap(t *testing.T) {
 	a := New(1024)
 	assert.Equal(t, a.Size(), uint64(1024))
 

@@ -130,7 +130,7 @@ func (sl *SkipList[K, V]) Remove(key K) bool {
 	if element == nil {
 		return false
 	}
-	if element != nil && sl.cmp(element.key, key) != 0 {
+	if sl.cmp(element.key, key) != 0 {
 		return false
 	}
 	for i, v := range element.next {

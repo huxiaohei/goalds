@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestBloomfilterDS(t *testing.T) {
+func TestBloomfilter(t *testing.T) {
 	a := NewWithEstimates(1024, 0.01, WithGoroutineSafe())
 	assert.False(t, a.Test("hello"))
 	a.Add("hello")

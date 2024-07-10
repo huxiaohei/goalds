@@ -1,6 +1,9 @@
 package deque
 
-import "fmt"
+import (
+	"fmt"
+	"goalds/utils/container"
+)
 
 const segmentCapacity = 128
 
@@ -11,6 +14,8 @@ type Deque[T any] struct {
 	end   int
 	size  int
 }
+
+var _ container.Container[int] = &Deque[int]{}
 
 func New[T any]() *Deque[T] {
 	return &Deque[T]{

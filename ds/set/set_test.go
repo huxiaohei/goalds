@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSetDS(t *testing.T) {
+func TestSet(t *testing.T) {
 	s := New[string](WithGoroutineSafe())
 
 	assert.True(t, s.Empty())
@@ -42,9 +42,7 @@ func TestSetDS(t *testing.T) {
 
 	s.Clear()
 	assert.True(t, s.Empty())
-}
 
-func TestSetAL(t *testing.T) {
 	s1 := New[string](WithGoroutineSafe())
 	s2 := New[string](WithGoroutineSafe())
 
